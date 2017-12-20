@@ -1,2 +1,35 @@
 # VirusTotal
 Maltego Local Transform to use VirusTotal Private API - https://www.virustotal.com/ja/documentation/private-api/
+
+- c2host_to_hash
+- downloadhost_to_hash
+- c2ip_to_hash
+- downloadip_to_hash
+- domain_to_ip
+- ip_to_domain
+- hash_to_c2host
+- hash_to_c2ip
+- hash_to_c2url
+- hash_to_avdetection
+- hash_to_filename
+- hash_to_useragent
+- hash_to_imphash
+- hash_to_similar
+- useragent_to_hash
+- imphash_to_hash
+- hash_to_rescan
+- hash_to_section
+- hash_to_timestamp
+- hash_to_firstseen
+- hash_to_filesize
+- hash_to_filetype
+- hash_to_peresource
+- hash_to_itw
+- hash_to_mutex
+- hash_to_md5
+- hash_to_sha256
+- section_to_hash
+- mutex_to_hash
+- peresource_to_hash
+- hash_to_behaviour / Beta
+- behaviour_to_hash / Beta
