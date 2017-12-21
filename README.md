@@ -1,10 +1,19 @@
 # [VirusTotal] Maltego Local Transforms
 Maltego Local Transforms to use VirusTotal Private API - https://www.virustotal.com/en/documentation/private-api/
 
+# Prerequisites
+- VirusTotal Private API access
+- Python 2.7.x
 
+# Setup
+- Edit VT.py and set apikey variables with your API key.
+- Put VT.py and MaltegoTransform.py into your workind directory. (e.g. C:\Maltego\Transforms\VirusTotal)
+- Open VT.mtz to import Maltego configuration.
+- The current configuration uses the following directories, so you may have to change them according to your environment.
+  Command line = C:\Python27\python.exe
+  Workind directory = C:\Maltego\Transforms\VirusTotal
 
-
-Transforms:
+# Transforms
 - c2host_to_hash
 - host_to_downloadedhash
 - c2ip_to_hash
@@ -47,5 +56,5 @@ Transforms:
 - behaviour_to_hash / Beta
 
 
-![geo](https://www.google.co.jp/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png)
+
 
