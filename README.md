@@ -1,6 +1,7 @@
 # [VirusTotal] Maltego Local Transforms
 Maltego Local Transforms to use VirusTotal Private API - https://www.virustotal.com/en/documentation/private-api/
 
+Transforms:
 - c2host_to_hash
 - host_to_downloadedhash
 - c2ip_to_hash
