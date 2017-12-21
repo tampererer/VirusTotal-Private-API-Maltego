@@ -31,5 +31,10 @@ Maltego Local Transform to use VirusTotal Private API - https://www.virustotal.c
 - section_to_hash
 - mutex_to_hash
 - peresource_to_hash
+- hash_to_detectratio
+- url_to_detectratio
+- domain_to_detectedurl
+- ip_to_detectedurl
+- domain_to_subdomain
 - hash_to_behaviour / Beta
 - behaviour_to_hash / Beta
