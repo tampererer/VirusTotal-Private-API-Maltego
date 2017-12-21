@@ -38,7 +38,11 @@ def host_to_downloadedhash():
             if 'detected_downloaded_samples' in response_json:
                 for item in response_json['detected_downloaded_samples']:
                     me = mt.addEntity("maltego.Hash", '%s' % item['sha256'])
-                    me.setLinkLabel("VT")
+                    me.setLinkLabel("VT detected_downloaded_hash")
+            if 'undetected_downloaded_samples' in response_json:
+                for item in response_json['undetected_downloaded_samples']:
+                    me = mt.addEntity("maltego.Hash", '%s' % item['sha256'])
+                    me.setLinkLabel("VT undetected_downloaded_hash")
 
     except:
         return False
@@ -76,7 +80,11 @@ def ip_to_downloadedhash():
             if 'detected_downloaded_samples' in response_json:
                 for item in response_json['detected_downloaded_samples']:
                     me = mt.addEntity("maltego.Hash", '%s' % item['sha256'])
-                    me.setLinkLabel("VT")
+                    me.setLinkLabel("VT detected_downloaded_hash")
+            if 'undetected_downloaded_samples' in response_json:
+                for item in response_json['undetected_downloaded_samples']:
+                    me = mt.addEntity("maltego.Hash", '%s' % item['sha256'])
+                    me.setLinkLabel("VT undetected_downloaded_hash")
 
     except:
         return False
@@ -600,18 +608,162 @@ def peresource_to_hash():
 
     return mt
 
-# hash_to_behaviour
-# ['behaviour-v1']['process']['shellcmds']['cmd']
-# ['behaviour-v1']['process']['created']['proc']
-# ['behaviour-v1']['registry']['set']['key'] + ['val']
-# ['behaviour-v1']['filesystem']['written']
+# hash_to_detectratio
+def hash_to_detectratio():
+    try:
+        params = {'apikey': apikey, 'resource': data}
+        response = requests.get(apiurl + 'file/report', params=params)
+        response_json = response.json()
+        respcode = int(response_json['response_code'])
+
+        if respcode == 1:
+            if 'total' in response_json:
+                me = mt.addEntity("maltego.Phrase", '%s' % response_json['positives'] + "/" + '%s' % response_json['total'])
+                me.setLinkLabel("VT")
+
+    except:
+        return False
+
+    return mt
+
+# url_to_detectratio
+def url_to_detectratio():
+    try:
+        params = {'apikey': apikey, 'resource': data}
+        response = requests.post(apiurl + 'url/report', params=params)
+        response_json = response.json()
+        respcode = int(response_json['response_code'])
+
+        if respcode == 1:
+            if 'total' in response_json:
+                me = mt.addEntity("maltego.Phrase", '%s' % response_json['positives'] + "/" + '%s' % response_json['total'])
+                me.setLinkLabel("VT")
+
+    except:
+        return False
+
+    return mt
+
+# domain_to_detectedurl
+def domain_to_detectedurl():
+    try:
+        params = {'apikey': apikey, 'domain': data}
+        response = requests.get(apiurl + 'domain/report', params=params)
+        response_json = response.json()
+        respcode = int(response_json['response_code'])
+
+        if respcode == 1:
+            if 'detected_urls' in response_json:
+                for item in response_json['detected_urls']:
+                    me = mt.addEntity("maltego.Domain", '%s' % item['url'])
+                    me.setLinkLabel("VT detected_url")
+
+    except:
+        return False
+
+    return mt
+
+# ip_to_detectedurl
+def ip_to_detectedurl():
+    try:
+        params = {'apikey': apikey, 'ip': data}
+        response = requests.get(apiurl + 'ip-address/report', params=params)
+        response_json = response.json()
+        respcode = int(response_json['response_code'])
+
+        if respcode == 1:
+            if 'detected_urls' in response_json:
+                for item in response_json['detected_urls']:
+                    me = mt.addEntity("maltego.Domain", '%s' % item['url'])
+                    me.setLinkLabel("VT detected_url")
+
+    except:
+        return False
+
+    return mt
+
+# domain_to_subdomain
+def domain_to_subdomain():
+    try:
+        params = {'apikey': apikey, 'domain': data}
+        response = requests.get(apiurl + 'domain/report', params=params)
+        response_json = response.json()
+        respcode = int(response_json['response_code'])
+
+        if respcode == 1:
+            if 'subdomains' in response_json:
+                for item in response_json['subdomains']:
+                    me = mt.addEntity("maltego.Domain", '%s' % item)
+                    me.setLinkLabel("VT")
+
+    except:
+        return False
+
+    return mt
+
+# hash_to_import
+def hash_to_import():
+    try:
+        params = {'apikey': apikey, 'resource': data, 'allinfo': '1'}
+        response = requests.get(apiurl + 'file/report', params=params)
+        response_json = response.json()
+        respcode = int(response_json['response_code'])
+
+        if respcode == 1:
+            if 'imports' in response_json['additional_info']:
+                for item in response_json['additional_info']['imports']:
+                    me = mt.addEntity("maltego.Imports", '%s' % item)
+                    me.setLinkLabel("VT")
+
+    except:
+        return False
+
+    return mt
+
+# import_to_hash
+def import_to_hash():
+    try:
+        params = {'apikey': apikey, 'query': 'imports:' + data}
+        response = requests.post(apiurl + 'file/search', params=params)
+        response_json = response.json()
+        respcode = int(response_json['response_code'])
+
+        if respcode == 1:
+            if 'hashes' in response_json:
+                for item in response_json['hashes']:
+                    me = mt.addEntity("maltego.Hash", '%s' % item)
+                    me.setLinkLabel("VT")
+
+    except:
+        return False
+
+    return mt
+
+# hash_to_tag
+def hash_to_tag():
+    try:
+        params = {'apikey': apikey, 'resource': data, 'allinfo': '1'}
+        response = requests.get(apiurl + 'file/report', params=params)
+        response_json = response.json()
+        respcode = int(response_json['response_code'])
+
+        if respcode == 1:
+            if 'tags' in response_json:
+                for item in response_json['tags']:
+                    me = mt.addEntity("maltego.Phrase", '%s' % item)
+
+    except:
+        return False
+
+    return mt
+
+# hash_to_behaviour / beta
 def hash_to_behaviour():
     try:
         params = {'apikey': apikey, 'resource': data, 'allinfo': '1'}
         response = requests.get(apiurl + 'file/report', params=params)
         response_json = response.json()
         respcode = int(response_json['response_code'])
-#        print response_json
 
         if respcode == 1:
             if 'shellcmds' in response_json['additional_info']['behaviour-v1']['process']:
@@ -636,7 +788,7 @@ def hash_to_behaviour():
 
     return mt
 
-# behaviour_to_hash
+# behaviour_to_hash / beta
 def behaviour_to_hash():
     try:
         params = {'apikey': apikey, 'query': 'behaviour:' + data}
@@ -673,7 +825,6 @@ data = sys.argv[2]
 
 mt = MaltegoTransform()
 mresult = eval(func)()
-#print mresult
 mresult.returnOutput()
 
 
