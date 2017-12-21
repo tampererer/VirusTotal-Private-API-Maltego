@@ -6,7 +6,6 @@ import re
 apiurl = "https://www.virustotal.com/vtapi/v2/"
 apikey = "<Your API Key>"
 
-
 # c2host_to_hash
 def c2host_to_hash():
     try:
@@ -22,7 +21,7 @@ def c2host_to_hash():
                     me.setLinkLabel("VT")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -45,7 +44,7 @@ def host_to_downloadedhash():
                     me.setLinkLabel("VT undetected_downloaded_hash")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -64,7 +63,7 @@ def c2ip_to_hash():
                     me.setLinkLabel("VT")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -87,7 +86,7 @@ def ip_to_downloadedhash():
                     me.setLinkLabel("VT undetected_downloaded_hash")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -106,7 +105,7 @@ def domain_to_ip():
                     me.setLinkLabel("VT PassiveDNS")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -125,7 +124,7 @@ def ip_to_domain():
                     me.setLinkLabel("VT PassiveDNS")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -144,7 +143,7 @@ def hash_to_c2host():
                     me.setLinkLabel("VT")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -167,7 +166,7 @@ def hash_to_c2ip():
                     me.setLinkLabel("VT")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -187,7 +186,7 @@ def hash_to_c2url():
                     me.setLinkLabel("VT")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -230,7 +229,7 @@ def hash_to_avdetection():
                     me.setLinkLabel("VT Symantec")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -249,7 +248,7 @@ def hash_to_filename():
                     me.setLinkLabel("VT Filename")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -268,7 +267,7 @@ def hash_to_useragent():
                     me.setLinkLabel("VT")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -286,7 +285,7 @@ def hash_to_imphash():
                 me.setLinkLabel("VT")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -305,7 +304,7 @@ def hash_to_similar():
                     me.setLinkLabel("VT similar-to")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -324,7 +323,7 @@ def useragent_to_hash():
                     me.setLinkLabel("VT")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -343,7 +342,7 @@ def imphash_to_hash():
                     me.setLinkLabel("VT")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -360,7 +359,7 @@ def hash_to_rescan():
                     me.setLinkLabel("VT")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -380,7 +379,7 @@ def hash_to_section():
                     me.setLinkLabel(item[0])
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -398,7 +397,7 @@ def hash_to_timestamp():
                 me = mt.addEntity("maltego.Timestamp", '%s' % response_json['additional_info']['exiftool']['TimeStamp'])
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -416,7 +415,7 @@ def hash_to_firstseen():
                 me.setLinkLabel("VT")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -433,7 +432,7 @@ def hash_to_filesize():
                 me = mt.addEntity("maltego.Filesize", '%s' % response_json['size'])
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -450,7 +449,7 @@ def hash_to_filetype():
                 me = mt.addEntity("maltego.Phrase", '%s' % response_json['type'])
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -471,7 +470,7 @@ def hash_to_peresource():
                     me.setLinkLabel(item['lang'] + " / " + item['type'])
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -494,7 +493,7 @@ def hash_to_itw():
                     me.setLinkLabel("VT compressed_parents")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -513,7 +512,7 @@ def hash_to_mutex():
                     me.setLinkLabel("VT mutex")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -530,7 +529,7 @@ def hash_to_md5():
                     me = mt.addEntity("maltego.Hash", '%s' % response_json['md5'])
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -547,7 +546,7 @@ def hash_to_sha256():
                     me = mt.addEntity("maltego.Hash", '%s' % response_json['sha256'])
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -566,7 +565,7 @@ def section_to_hash():
                     me.setLinkLabel("VT")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -585,7 +584,7 @@ def mutex_to_hash():
                     me.setLinkLabel("VT")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -604,7 +603,7 @@ def peresource_to_hash():
                     me.setLinkLabel("VT")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -622,7 +621,7 @@ def hash_to_detectratio():
                 me.setLinkLabel("VT")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -640,7 +639,7 @@ def url_to_detectratio():
                 me.setLinkLabel("VT")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -659,7 +658,7 @@ def domain_to_detectedurl():
                     me.setLinkLabel("VT detected_url")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -678,7 +677,7 @@ def ip_to_detectedurl():
                     me.setLinkLabel("VT detected_url")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -697,7 +696,7 @@ def domain_to_subdomain():
                     me.setLinkLabel("VT")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -716,7 +715,7 @@ def hash_to_import():
                     me.setLinkLabel("VT")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -735,7 +734,7 @@ def import_to_hash():
                     me.setLinkLabel("VT")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -753,7 +752,7 @@ def hash_to_tag():
                     me = mt.addEntity("maltego.Phrase", '%s' % item)
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -784,7 +783,7 @@ def hash_to_behaviour():
                     me.setLinkLabel("VT filesystem written")
 
     except:
-        return False
+        pass
 
     return mt
 
@@ -803,7 +802,7 @@ def behaviour_to_hash():
                     me.setLinkLabel("VT")
 
     except:
-        return False
+        pass
 
     return mt
 
