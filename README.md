@@ -47,5 +47,5 @@ Transforms:
 - behaviour_to_hash / Beta
 
 
-![geo](http://https://virustotalcloud.appspot.com/static/img/logo.png)
+![geo](https://www.google.co.jp/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png)
 
