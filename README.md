@@ -1,6 +1,9 @@
 # [VirusTotal] Maltego Local Transforms
 Maltego Local Transforms to use VirusTotal Private API - https://www.virustotal.com/en/documentation/private-api/
 
+
+![geo](http://https://virustotalcloud.appspot.com/static/img/logo.png)
+
 Transforms:
 - c2host_to_hash
 - host_to_downloadedhash
