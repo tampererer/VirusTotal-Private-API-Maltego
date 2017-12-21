@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from MaltegoTransform import *
 import requests
 import json
@@ -5,6 +6,7 @@ import re
 
 apiurl = "https://www.virustotal.com/vtapi/v2/"
 apikey = "<Your API Key>"
+
 
 # c2host_to_hash
 def c2host_to_hash():
@@ -244,7 +246,7 @@ def hash_to_filename():
         if respcode == 1:
             if 'submission_names' in response_json:
                 for item in response_json['submission_names']:
-                    me = mt.addEntity("maltego.Phrase", '%s' % item)
+                    me = mt.addEntity("maltego.Phrase", '%s' % item.encode("utf-8"))
                     me.setLinkLabel("VT Filename")
 
     except:
