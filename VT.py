@@ -493,6 +493,14 @@ def hash_to_itw():
                 for item in response_json['additional_info']['compressed_parents']:
                     me = mt.addEntity("maltego.Hash", '%s' % item)
                     me.setLinkLabel("VT compressed_parents")
+            if 'execution_parents' in response_json['additional_info']:
+                for item in response_json['additional_info']['execution_parents']:
+                    me = mt.addEntity("maltego.Hash", '%s' % item)
+                    me.setLinkLabel("VT execution_parents")
+            if 'carbonblack_parents' in response_json['additional_info']:
+                for item in response_json['additional_info']['carbonblack_parents']:
+                    me = mt.addEntity("maltego.Hash", '%s' % item)
+                    me.setLinkLabel("VT carbonblack_parents md5")
 
     except:
         pass
@@ -529,6 +537,7 @@ def hash_to_md5():
         if respcode == 1:
             if 'md5' in response_json:
                     me = mt.addEntity("maltego.Hash", '%s' % response_json['md5'])
+                    me.setLinkLabel("md5")
 
     except:
         pass
@@ -546,6 +555,7 @@ def hash_to_sha256():
         if respcode == 1:
             if 'sha256' in response_json:
                     me = mt.addEntity("maltego.Hash", '%s' % response_json['sha256'])
+                    me.setLinkLabel("sha256")
 
     except:
         pass
@@ -752,6 +762,25 @@ def hash_to_tag():
             if 'tags' in response_json:
                 for item in response_json['tags']:
                     me = mt.addEntity("maltego.Phrase", '%s' % item)
+                    me.setLinkLabel("VT Tag")
+
+    except:
+        pass
+
+    return mt
+
+# hash_to_authentihash
+def hash_to_authentihash():
+    try:
+        params = {'apikey': apikey, 'resource': data, 'allinfo': '1'}
+        response = requests.get(apiurl + 'file/report', params=params)
+        response_json = response.json()
+        respcode = int(response_json['response_code'])
+
+        if respcode == 1:
+            if 'authentihash' in response_json:
+                    me = mt.addEntity("maltego.Authentihash", '%s' % response_json['authentihash'])
+                    me.setLinkLabel("sha256")
 
     except:
         pass
@@ -808,11 +837,11 @@ def behaviour_to_hash():
 
     return mt
 
-# 
+# hash_to_authentihash
 
 
 
-# 
+# authentihash_to_hash
 
 
 
