@@ -3,7 +3,7 @@ Maltego Local Transforms to use VirusTotal Private API - https://www.virustotal.
 
 # Prerequisites
 - VirusTotal Private API access
-- Python 2.7.x
+- Python 2.7.x + requests, json, re module
 
 # Setup
 - Edit VT.py and set "apikey" variables with your API key.
