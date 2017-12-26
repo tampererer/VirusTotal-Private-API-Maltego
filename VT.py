@@ -787,6 +787,25 @@ def hash_to_authentihash():
 
     return mt
 
+# hash_to_pdb
+def hash_to_pdb():
+    try:
+        params = {'apikey': apikey, 'resource': data, 'allinfo': '1'}
+        response = requests.get(apiurl + 'file/report', params=params)
+        response_json = response.json()
+        respcode = int(response_json['response_code'])
+
+        if respcode == 1:
+            for r in response_json['additional_info']['pe-debug']:
+                if 'codeview' in r:
+                    me = mt.addEntity("maltego.Phrase", '%s' % r['codeview']['name'])
+                    me.setLinkLabel("VT")
+
+    except:
+        pass
+
+    return mt
+
 # hash_to_behaviour / beta
 def hash_to_behaviour():
     try:
@@ -837,13 +856,13 @@ def behaviour_to_hash():
 
     return mt
 
-# hash_to_authentihash
+# 
 
+# 
 
+# 
 
-# authentihash_to_hash
-
-
+# 
 
 # 
 
