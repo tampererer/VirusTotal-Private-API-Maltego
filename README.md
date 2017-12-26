@@ -52,6 +52,7 @@ Maltego Local Transforms to use VirusTotal Private API - https://www.virustotal.
 - hash_to_import
 - import_to_hash
 - hash_to_tag
+- hash_to_authentihash
 - hash_to_behaviour / Beta
 - behaviour_to_hash / Beta
 
