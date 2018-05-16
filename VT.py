@@ -12,7 +12,7 @@ apikey = "<Your API Key>"
 def c2host_to_hash():
     try:
         params = {'apikey': apikey, 'query': 'behaviour:' + data}
-        response = requests.post(apiurl + 'file/search', params=params)
+        response = requests.post(apiurl + 'file/search', data=params)
         response_json = response.json()
         respcode = int(response_json['response_code'])
 
@@ -54,7 +54,7 @@ def host_to_downloadedhash():
 def c2ip_to_hash():
     try:
         params = {'apikey': apikey, 'query': 'behaviour:' + data}
-        response = requests.post(apiurl + 'file/search', params=params)
+        response = requests.post(apiurl + 'file/search', data=params)
         response_json = response.json()
         respcode = int(response_json['response_code'])
 
@@ -295,7 +295,7 @@ def hash_to_imphash():
 def hash_to_similar():
     try:
         params = {'apikey': apikey, 'query': 'similar-to:' + data}
-        response = requests.post(apiurl + 'file/search', params=params)
+        response = requests.post(apiurl + 'file/search', data=params)
         response_json = response.json()
         respcode = int(response_json['response_code'])
 
@@ -314,7 +314,7 @@ def hash_to_similar():
 def useragent_to_hash():
     try:
         params = {'apikey': apikey, 'query': 'behaviour:' + data}
-        response = requests.post(apiurl + 'file/search', params=params)
+        response = requests.post(apiurl + 'file/search', data=params)
         response_json = response.json()
         respcode = int(response_json['response_code'])
 
@@ -333,7 +333,7 @@ def useragent_to_hash():
 def imphash_to_hash():
     try:
         params = {'apikey': apikey, 'query': 'imphash:' + data}
-        response = requests.post(apiurl + 'file/search', params=params)
+        response = requests.post(apiurl + 'file/search', data=params)
         response_json = response.json()
         respcode = int(response_json['response_code'])
 
@@ -352,7 +352,7 @@ def imphash_to_hash():
 def hash_to_rescan():
     try:
         params = {'apikey': apikey, 'resource': data}
-        response = requests.post(apiurl + 'file/rescan', params=params)
+        response = requests.post(apiurl + 'file/rescan', data=params)
         response_json = response.json()
         respcode = int(response_json['response_code'])
 
@@ -501,6 +501,11 @@ def hash_to_itw():
                 for item in response_json['additional_info']['carbonblack_parents']:
                     me = mt.addEntity("maltego.Hash", '%s' % item)
                     me.setLinkLabel("VT carbonblack_parents md5")
+            if 'ITW_urls' in response_json:
+                for item in response_json['ITW_urls']:
+                    me = mt.addEntity("maltego.Domain", '%s' % item)
+                    me.setLinkLabel("VT Download URL")
+
 
     except:
         pass
@@ -566,7 +571,7 @@ def hash_to_sha256():
 def section_to_hash():
     try:
         params = {'apikey': apikey, 'query': 'section:' + data}
-        response = requests.post(apiurl + 'file/search', params=params)
+        response = requests.post(apiurl + 'file/search', data=params)
         response_json = response.json()
         respcode = int(response_json['response_code'])
 
@@ -585,7 +590,7 @@ def section_to_hash():
 def mutex_to_hash():
     try:
         params = {'apikey': apikey, 'query': 'behaviour:' + data}
-        response = requests.post(apiurl + 'file/search', params=params)
+        response = requests.post(apiurl + 'file/search', data=params)
         response_json = response.json()
         respcode = int(response_json['response_code'])
 
@@ -604,7 +609,7 @@ def mutex_to_hash():
 def peresource_to_hash():
     try:
         params = {'apikey': apikey, 'query': 'resource:' + data}
-        response = requests.post(apiurl + 'file/search', params=params)
+        response = requests.post(apiurl + 'file/search', data=params)
         response_json = response.json()
         respcode = int(response_json['response_code'])
 
@@ -641,7 +646,7 @@ def hash_to_detectratio():
 def url_to_detectratio():
     try:
         params = {'apikey': apikey, 'resource': data}
-        response = requests.post(apiurl + 'url/report', params=params)
+        response = requests.post(apiurl + 'url/report', data=params)
         response_json = response.json()
         respcode = int(response_json['response_code'])
 
@@ -735,7 +740,7 @@ def hash_to_import():
 def import_to_hash():
     try:
         params = {'apikey': apikey, 'query': 'imports:' + data}
-        response = requests.post(apiurl + 'file/search', params=params)
+        response = requests.post(apiurl + 'file/search', data=params)
         response_json = response.json()
         respcode = int(response_json['response_code'])
 
@@ -841,7 +846,7 @@ def hash_to_behaviour():
 def behaviour_to_hash():
     try:
         params = {'apikey': apikey, 'query': 'behaviour:' + data}
-        response = requests.post(apiurl + 'file/search', params=params)
+        response = requests.post(apiurl + 'file/search', data=params)
         response_json = response.json()
         respcode = int(response_json['response_code'])
 
