@@ -1,4 +1,4 @@
-# [VirusTotal] Maltego Local Transforms
+# [VirusTotal Private API] Maltego Local Transforms
 Maltego Local Transforms to use VirusTotal Private API - https://www.virustotal.com/en/documentation/private-api/
 
 # Prerequisites
