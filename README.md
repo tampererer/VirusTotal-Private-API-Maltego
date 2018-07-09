@@ -7,7 +7,7 @@ Maltego Local Transforms to use VirusTotal Private API - https://www.virustotal.
 
 # 必要なもの
 - VirusTotal Private APIのアクセス権
-- Python 2.7.x + requests, json re モジュール
+- Python 2.7.x + requests, json, re モジュール
 
 # Setup
 - Edit VT.py and set "apikey" variable with your API key.  
