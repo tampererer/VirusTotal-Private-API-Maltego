@@ -70,7 +70,3 @@ Maltego Local Transforms to use VirusTotal Private API - https://www.virustotal.
 - hash_to_pdb
 - hash_to_behaviour / Beta
 - behaviour_to_hash / Beta
-
-
-
-
