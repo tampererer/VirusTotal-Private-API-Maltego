@@ -19,7 +19,7 @@ Maltego Local Transforms to use VirusTotal Private API - https://www.virustotal.
   Working directory = C:\Maltego\Transforms\VirusTotal
 
 # セットアップ
-- VT.py の中で apikey という変数に、自分の API Key を記載してください。
+- VT.py の中で、apikey という変数に自分の API key を記載してください。
 - VT.py と MaltegoTransform.py を、このTransform用に作ったディレクトリに置いてください。（例： C:\Maltego\Transforms\VirusTotal）
 - VT.mtz を開いて、Maltegoの設定をインポートしてください。
 - mtzファイルに含まれる設定では、下記のディレクトリが指定されていますが、自分の環境に合わせて変更してください。（Maltego -> Transforms -> Transform Manager）
