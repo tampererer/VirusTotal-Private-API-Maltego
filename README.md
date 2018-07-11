@@ -28,45 +28,45 @@ Maltego Local Transforms to use VirusTotal Private API - https://www.virustotal.
   Working directory = C:\Maltego\Transforms\VirusTotal
 
 # Transforms
-- c2host_to_hash
-- host_to_downloadedhash
-- c2ip_to_hash
-- ip_to_downloadedhash
-- domain_to_ip
-- ip_to_domain
-- hash_to_c2host
-- hash_to_c2ip
-- hash_to_c2url
-- hash_to_avdetection
-- hash_to_filename
-- hash_to_useragent
-- hash_to_imphash
-- hash_to_similar
-- useragent_to_hash
-- imphash_to_hash
-- hash_to_rescan
-- hash_to_section
-- hash_to_timestamp
-- hash_to_firstseen
-- hash_to_filesize
-- hash_to_filetype
-- hash_to_peresource
-- hash_to_itw
-- hash_to_mutex
-- hash_to_md5
-- hash_to_sha256
-- section_to_hash
-- mutex_to_hash
-- peresource_to_hash
-- hash_to_detectratio
-- url_to_detectratio
-- domain_to_detectedurl
-- ip_to_detectedurl
-- domain_to_subdomain
-- hash_to_import
-- import_to_hash
-- hash_to_tag
-- hash_to_authentihash
-- hash_to_pdb
-- hash_to_behaviour / Beta
-- behaviour_to_hash / Beta
+- [VT] c2host_to_hash
+- [VT] host_to_downloadedhash
+- [VT] c2ip_to_hash
+- [VT] ip_to_downloadedhash
+- [VT] domain_to_ip
+- [VT] ip_to_domain
+- [VT] hash_to_c2host
+- [VT] hash_to_c2ip
+- [VT] hash_to_c2url
+- [VT] hash_to_avdetection
+- [VT] hash_to_filename
+- [VT] hash_to_useragent
+- [VT] hash_to_imphash
+- [VT] hash_to_similar
+- [VT] useragent_to_hash
+- [VT] imphash_to_hash
+- [VT] hash_to_rescan
+- [VT] hash_to_section
+- [VT] hash_to_timestamp
+- [VT] hash_to_firstseen
+- [VT] hash_to_filesize
+- [VT] hash_to_filetype
+- [VT] hash_to_peresource
+- [VT] hash_to_itw
+- [VT] hash_to_mutex
+- [VT] hash_to_md5
+- [VT] hash_to_sha256
+- [VT] section_to_hash
+- [VT] mutex_to_hash
+- [VT] peresource_to_hash
+- [VT] hash_to_detectratio
+- [VT] url_to_detectratio
+- [VT] domain_to_detectedurl
+- [VT] ip_to_detectedurl
+- [VT] domain_to_subdomain
+- [VT] hash_to_import
+- [VT] import_to_hash
+- [VT] hash_to_tag
+- [VT] hash_to_authentihash
+- [VT] hash_to_pdb
+- [VT] hash_to_behaviour / Beta
+- [VT] behaviour_to_hash / Beta
